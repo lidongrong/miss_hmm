@@ -106,6 +106,8 @@ if __name__=='__main__':
     # initialize the model
     model=hmm_model(hidden_state,obs_state)
     # fit the model
+    # WARNING: If you are using WINDOWS, then 
+    # MAKE SURE model.fit() is inside of the main function, otherwise the multiprocessing module will get stuck (An annoying bug in Python)
     a,b,c,f,l=model.fit(data,5,0.01)
     # view learnt parameters
     print(model.transision)
