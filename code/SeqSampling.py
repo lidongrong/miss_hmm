@@ -18,7 +18,7 @@ Created on Thu Nov  4 14:26:34 2021
 @author: a
 """
 
-import .HMM
+from .HMM import*
 import numpy as np
 import scipy.stats
 import math

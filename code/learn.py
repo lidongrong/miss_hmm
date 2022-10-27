@@ -6,8 +6,8 @@ Created on Mon Feb 21 19:00:30 2022
 """
 
 import numpy as np
-import .HMM
-import .SeqSampling as Sampling
+from .HMM import*
+from .SeqSampling import*
 import time
 from multiprocessing import Pool
 import scipy.stats as stats
@@ -27,15 +27,15 @@ def data_initializer(transition,obs_prob,pi,hidden_state,obs_state,rate):
     #data=Sampling.data
     
     # Generate the HMM object
-    MC=HMM.HMM(hidden_state,obs_state,transition,obs_prob,pi)
+    MC=HMM(hidden_state,obs_state,transition,obs_prob,pi)
 
 
     # Construct Data
-    hidden_data=Sampling.Hidden_Generator(MC,20,5000)
-    data=Sampling.Obs_Generator(MC,hidden_data)
+    hidden_data=Hidden_Generator(MC,20,5000)
+    data=Obs_Generator(MC,hidden_data)
 
     # Missing at random
-    data=Sampling.Missing(data,p=rate)
+    data=Missing(data,p=rate)
     
     # Initialize transition matrix A
     

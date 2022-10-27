@@ -9,7 +9,7 @@ Created on Thu Oct 27 16:41:20 2022
 import numpy as np
 #from ZMARGibbs import*
 from .HMM import*
-from .EMHMM import*
+from .learn import*
 #from SeqSampling import*
 
 # viterbi decoding
